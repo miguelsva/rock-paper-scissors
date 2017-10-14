@@ -3,6 +3,7 @@ import {
   START_GAME,
   RESET_GAME
 } from './constants';
+import { getComputerMove } from '../../game'
 
 const initialState = {
   playerMove: null,
@@ -14,7 +15,7 @@ const appReducer = (state = initialState, action) => {
     case SET_PLAYER_MOVE:
     return { ...state, playerMove: action.move };
     case START_GAME: {
-      const computerMove = 'rock'; // TODO
+      const computerMove = getComputerMove();
       return { ...state, computerMove };
     }
     case RESET_GAME:

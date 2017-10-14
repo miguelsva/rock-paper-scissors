@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
+import { getResult } from '../../game';
 
 const selectApp = state => state.app;
 
@@ -16,13 +17,6 @@ export const selectGameResult = () => createSelector(
   selectApp,
   (app) => {
     const { playerMove, computerMove } = app;
-    if (!playerMove || !computerMove) {
-      return null;
-    }
-    // TODO
-    return {
-      title: 'Winner!',
-      info: 'paper beats rock'
-    }
+    return getResult(playerMove, computerMove);
   }
 );
