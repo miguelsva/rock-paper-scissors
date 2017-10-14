@@ -1,0 +1,11 @@
+.computer-move {
+  display: inline-block;
+  box-sizing: border-box;
+  padding-top: 15px;
+  width: 100px;
+  height: 100px;
+  color: #053253;
+  font-size: 52px;
+  border-radius: 10px;
+  border: 5px solid #DDD;
+}

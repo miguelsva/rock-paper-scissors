@@ -18,7 +18,7 @@ import {
   Result
 } from '../../components';
 import './styles.css';
-const delay = 2000;
+const delay = 3000;
 
 export const App = (props) => {
 
@@ -57,7 +57,12 @@ export const App = (props) => {
           computerMove={computerMove}
         />
         :
-        <button onClick={play} disabled={!playerMove}>Play</button>
+        <button
+          onClick={play}
+          disabled={!playerMove}
+          className="app-play">
+          Play!
+        </button>
       }
     </div>
   );

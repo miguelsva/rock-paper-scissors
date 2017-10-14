@@ -1,0 +1,28 @@
+.player-info {
+  margin-bottom: 10px;
+}
+
+.player button {
+  margin: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  border-width: 0;
+  color: #053253;
+  font-size: 52px;
+  background-color: #FFF;
+  border: 5px solid #DDD;
+}
+
+.player button.selected,
+.player button:hover {
+  border: 5px solid #053253;
+}
+
+.player button:hover {
+  cursor: pointer;
+}
+
+.player button[disabled] {
+  cursor: initial;
+}
