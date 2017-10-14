@@ -4,6 +4,8 @@ This package allows you to play Rock, Paper, Scissors against the computer.
 
 ## To run the application:
 
+After `npm install` run:
+
 ```sh
 npm start
 ```
@@ -13,6 +15,8 @@ npm start
 ```sh
 npm test
 ```
+
+and then press `a` to run all the tests
 
 ## Approach
 
