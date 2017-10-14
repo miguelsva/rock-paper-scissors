@@ -14,8 +14,7 @@
   border: 5px solid #DDD;
 }
 
-.player button.selected,
-.player button:hover {
+.player button.selected {
   border: 5px solid #053253;
 }
 

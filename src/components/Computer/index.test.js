@@ -10,6 +10,6 @@ describe('Computer', () => {
 
   it('should render the computer move', () => {
     const computer = shallow(<Computer { ...mockProps } />);
-    expect(computer.find('button').text()).toEqual(mockProps.move);
+    expect(computer.find('i.fa-hand-rock-o')).toHaveLength(1);
   });
 });
