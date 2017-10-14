@@ -9,13 +9,17 @@ describe('Result', () => {
     computerMove: 'scissors'
   };
 
+  let result;
+
+  beforeAll(() => {
+    result = shallow(<Result { ...mockProps } />);
+  });
+
   it('should render the result title', () => {
-    const result = shallow(<Result { ...mockProps } />);
     expect(result.find('h3').text()).toEqual('You win! :)');
   });
 
   it('should render the result info', () => {
-    const result = shallow(<Result { ...mockProps } />);
     expect(result.find('span').text()).toEqual('rock beats scissors');
   });
 });

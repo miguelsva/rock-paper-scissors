@@ -4,7 +4,7 @@ import Player from './';
 
 describe('Player', () => {
   const mockProps = {
-    move: null,
+    move: 'rock',
     onMove: jest.fn()
   };
 
@@ -14,10 +14,12 @@ describe('Player', () => {
     player = shallow(<Player {...mockProps} />);
   });
 
+  it('should select the current move', () => {
+    expect(player.find('button').first().hasClass('selected')).toBe(true);
+  });
+
   it('should call onMove on click', () => {
-    player.find('button').forEach((button) => {
-      button.simulate('click');
-      expect(mockProps.onMove).toHaveBeenCalledWith('rock');
-    });
+    player.find('button').first().simulate('click');
+    expect(mockProps.onMove).toHaveBeenCalledWith('rock');
   });
 });
