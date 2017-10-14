@@ -5,8 +5,8 @@ const moves = [
 ];
 
 export const getComputerMove = () => {
-  let random = Math.floor(Math.random() * moves.length);
-  return random < moves.length ? moves[random].name : moves[moves.length - 1].name;
+  const random = Math.floor(Math.random() * moves.length);
+  return moves[random].name;
 };
 
 export const getResult = (playerMove, computerMove) => {

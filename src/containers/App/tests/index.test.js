@@ -11,7 +11,6 @@ describe('App', () => {
     onPlay: jest.fn(),
     onReset: jest.fn()
   };
-
   let app;
 
   beforeAll(() => {
