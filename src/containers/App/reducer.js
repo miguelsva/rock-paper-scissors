@@ -3,7 +3,7 @@ import {
   START_GAME,
   RESET_GAME
 } from './constants';
-import { getComputerMove } from '../../game'
+import { getComputerMove } from '../../game';
 
 const initialState = {
   playerMove: null,

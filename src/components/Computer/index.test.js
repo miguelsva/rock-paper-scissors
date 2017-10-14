@@ -1,9 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Player from './';
+import Computer from './';
 
-describe('Player', () => {
-  it('renders without crashing', () => {
-    shallow(<Player />);
+describe('Computer', () => {
+
+  const mockProps = {
+    move: 'rock'
+  };
+
+  it('should render the computer move', () => {
+    const computer = shallow(<Computer { ...mockProps } />);
+    expect(computer.find('button').text()).toEqual(mockProps.move);
   });
 });

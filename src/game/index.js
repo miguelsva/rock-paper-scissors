@@ -5,8 +5,8 @@ const moves = [
 ];
 
 export const getComputerMove = () => {
-  const random = Math.floor(Math.random() * moves.length);
-  return moves[random].name;
+  let random = Math.floor(Math.random() * moves.length);
+  return random < moves.length ? moves[random].name : moves[moves.length - 1].name;
 };
 
 export const getResult = (playerMove, computerMove) => {
@@ -14,19 +14,11 @@ export const getResult = (playerMove, computerMove) => {
     return null;
   }
   if (playerMove === computerMove) {
-    return {
-      title: 'Tie!'
-    };
+    return 'tie';
   }
   const playerMoveBeats = moves.find((move) => move.name === playerMove).beats;
   if (playerMoveBeats === computerMove) {
-    return {
-      title: 'You win!',
-      info: `${playerMove} beats ${computerMove}`
-    }
+    return 'win';
   }
-  return {
-    title: 'You lost :(',
-    info: `${computerMove} beats ${playerMove}`
-  }
+  return 'loss';
 };

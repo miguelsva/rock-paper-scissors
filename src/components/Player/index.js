@@ -5,9 +5,9 @@ const Player = ({ move, onMove }) => (
   <div>
     <h3>Player</h3>
     <div>Please select your move:</div>
-    <button onClick={() => onMove('rock')}>Rock</button>
-    <button onClick={() => onMove('paper')}>Paper</button>
-    <button onClick={() => onMove('scissors')}>Scissors</button>
+    <button onClick={() => onMove('rock')} disabled={!!move}>Rock</button>
+    <button onClick={() => onMove('paper')} disabled={!!move}>Paper</button>
+    <button onClick={() => onMove('scissors')} disabled={!!move}>Scissors</button>
   </div>
 );
 

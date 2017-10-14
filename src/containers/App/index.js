@@ -18,6 +18,7 @@ import {
   Result
 } from '../../components';
 import './styles.css';
+const delay = 2000;
 
 export const App = (props) => {
 
@@ -27,7 +28,7 @@ export const App = (props) => {
       onReset
     } = props;
     onPlay();
-    setTimeout(onReset, 2000);
+    setTimeout(onReset, delay);
   }
 
   const {
@@ -46,14 +47,14 @@ export const App = (props) => {
         move={playerMove}
         onMove={onPlayerMove}
       />
-      {!!playerMove}
       <Computer
         move={computerMove}
       />
       { gameResult ? 
         <Result
-          title={gameResult.title}
-          info={gameResult.info}
+          value={gameResult}
+          playerMove={playerMove}
+          computerMove={computerMove}
         />
         :
         <button onClick={play} disabled={!playerMove}>Play</button>
@@ -65,7 +66,7 @@ export const App = (props) => {
 App.propTypes = {
   playerMove: PropTypes.string,
   computerMove: PropTypes.string,
-  gameResult: PropTypes.object,
+  gameResult: PropTypes.string,
   onPlayerMove: PropTypes.func.isRequired,
   onPlay: PropTypes.func.isRequired,
   onReset: PropTypes.func.isRequired,
